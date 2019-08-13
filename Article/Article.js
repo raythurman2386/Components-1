@@ -118,14 +118,21 @@ const articleCreator = (title, date, p1, p2, p3) => {
 
   // expandButton span
   const expandButton = document.createElement('span');
+  expandButton.textContent = 'Expand';
   expandButton.classList.add('expandButton');
 
+  // Event listener for the expand button
   expandButton.addEventListener('click', () => {
     article.classList.toggle('article-open');
   });
 
   // Attach items to the div
-  article.appendChild(articleTitle, articleDate, para1, para2, para3, expandButton);
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(expandButton);
 
   // return article
   return article;
@@ -137,6 +144,11 @@ const articleComponents = data.map((i) => {
 });
 
 console.log(articleComponents);
+
+const articleContainer = document.querySelector('.articles');
+articleComponents.forEach((article) => {
+  articleContainer.appendChild(article);
+});
 
 /*<div class="article">
     <h2>{title of the article}</h2>
