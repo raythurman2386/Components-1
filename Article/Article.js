@@ -133,6 +133,7 @@ const articleCreator = (title, date, p1, p2, p3) => {
 
   // Event listener for the expand button
   expandButton.addEventListener('click', () => {
+    article.style.transition = '0.7s';
     article.classList.toggle('article-open');
   });
 
