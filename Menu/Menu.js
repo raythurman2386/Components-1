@@ -28,30 +28,37 @@ let menuItems = [ 'Students', 'Faculty', "What's New", 'Tech Trends', 'Music', '
 */
 
 // Variables
+// grab the menu button
 const menuButton = document.querySelector('.menu-button');
 const header = document.querySelector('.header');
 
 const menuCreator = (arr) => {
-	// Create the menu div and assign it's class
-	const menu = document.createElement('div');
-	menu.classList.add('menu');
+  // Create the menu div and assign it's class
+  const menu = document.createElement('div');
+  menu.classList.add('menu');
 
-	// Create the ul and append it to the div
-	const mainUl = document.createElement('ul');
-	menu.appendChild(mainUl);
+  // Create the ul and append it to the div
+  const mainUl = document.createElement('ul');
+  menu.appendChild(mainUl);
 
-	//iterate over the array and make new li's
-	arr.forEach((element) => {
-		let newItem = document.createElement('li');
-		mainUl.appendChild(newItem);
-		newItem.textContent = element;
-	});
+  //iterate over the array and make new li's
+  arr.forEach((element) => {
+    let newItem = document.createElement('li');
+    newItem.textContent = element;
+    mainUl.appendChild(newItem);
+  });
 
-	// add the event listener for the menu button
-	menuButton.addEventListener('click', () => {
-		menu.classList.toggle('menu-open');
-	});
+  console.log(mainUl);
 
-	// Return menu
-	return menuDiv;
+  // add the event listener for the menu button
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
+    console.log('clicked');
+  });
+
+  // Return menu
+  return menu;
 };
+
+// Attach the menu to the header
+header.appendChild(menuCreator(menuItems));
