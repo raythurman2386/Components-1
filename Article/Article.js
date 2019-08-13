@@ -150,7 +150,8 @@ articleComponents.forEach((article) => {
   articleContainer.appendChild(article);
 });
 
-/*<div class="article">
+/*
+  <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
