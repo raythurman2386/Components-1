@@ -45,15 +45,18 @@ const menuCreator = (arr) => {
   arr.forEach((element) => {
     let newItem = document.createElement('li');
     newItem.textContent = element;
+    newItem.style.cursor = 'pointer';
     mainUl.appendChild(newItem);
   });
 
   console.log(mainUl);
 
   // add the event listener for the menu button
-  menuButton.addEventListener('click', () => {
+  menuButton.addEventListener('click', (e) => {
+    e.stopPropagation();
     menu.classList.toggle('menu--open');
-    console.log('clicked');
+
+    // console.log('clicked');
   });
 
   // Return menu
