@@ -40,6 +40,13 @@ const menuCreator = (arr) => {
 	const mainUl = document.createElement('ul');
 	menu.appendChild(mainUl);
 
+	//iterate over the array and make new li's
+	arr.forEach((element) => {
+		let newItem = document.createElement('li');
+		mainUl.appendChild(newItem);
+		newItem.textContent = element;
+	});
+
 	// Return menu
 	return menuDiv;
 };
