@@ -86,6 +86,16 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   },
+  {
+    title           : "Broly's Return",
+    date            : 'Aug 12th, 2019',
+    firstParagraph  :
+      'Blood dance pui rasin bio-broly. Akira brief corporation leon cooler oolong. Miira super ultimate tao cold hirudegarm baby master 17 rasin frieza. Goten froug bubbles bio-broly mai lakasei dolltaki turtle master recoome kado. Ultra guido corporation 17 tarble pan daemon caterpy hame yajirobe dr. 18. Arale dende. Brief roshi ginger chi-chi ha akira shu hame towa ha rasin saiyan cooler. Bulma namek patrol yajirobe hirudegarm. Great force power z chun 18. Orlen dende corporation aka. Dende orlen turtle fusion kami earth bio-broly dolltaki. Satan ultra popo burter hope ha pole blueberry corporation vinegar bulma. Jeice force master abo flying. Force satan ribbon cui kado z leon.',
+    secondParagraph :
+      ' Fasha ozaru turles gero ha kami. Power earth. Arqua nicky. Satan dance. Namek froug cyborg. Ozaru great future ha patrol yajirobe tenshinhan gotenks suno. Bujin guido myuu boo. Satan bujin. Ozaru olibu. Miira satan corporation 18 raditz freeza pilaf ape blood blueberry. Jeice earth bujin dolltaki.',
+    thirdParagraph  :
+      'Bujin broly buu shorty z tournament kai power uub bebi hirudegarm blueberry popo abo zeta oolong 18 ultimate jackie. Miira pilaf raditz ultimate leon frieza shu god corporation ha journey 18 captain. Blood dende corporation jr. tien. Force orlen neiz pai bibidi gotenks goku ha king cui super boo namole z tournament ape. Pilaf akira daiz ha dolltaki fighters gravity dance kogu red. Akira miira piccolo chaozu red kado. Guido videl napa spice buu hirudegarm nimbus cold arts cacao captain dr. tournament. Bulma roshi pai broly satan fasha. Namek broly. Goten power. Arale dance namek. World papoi capsule myuu. Bills salza ginger minotia 18 17 pan hope jr. tarble fighter myuu boo force syn patrol syn. World amond z. Grand videl fusion pikkon rasin blueberry tenshinhan pui broly suno moon mercenary.',
+  },
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
