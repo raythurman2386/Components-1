@@ -36,6 +36,10 @@ const menuCreator = (arr) => {
 	const menu = document.createElement('div');
 	menu.classList.add('menu');
 
+	// Create the ul and append it to the div
+	const mainUl = document.createElement('ul');
+	menu.appendChild(mainUl);
+
 	// Return menu
 	return menuDiv;
 };
