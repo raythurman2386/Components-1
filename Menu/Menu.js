@@ -47,6 +47,11 @@ const menuCreator = (arr) => {
 		newItem.textContent = element;
 	});
 
+	// add the event listener for the menu button
+	menuButton.addEventListener('click', () => {
+		menu.classList.toggle('menu-open');
+	});
+
 	// Return menu
 	return menuDiv;
 };
