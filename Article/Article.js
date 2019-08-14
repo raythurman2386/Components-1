@@ -137,6 +137,11 @@ const articleCreator = (title, date, p1, p2, p3) => {
     article.classList.toggle('article-open');
   });
 
+  // Close button
+  const closeButton = document.createElement('span');
+  closeButton.textContent = 'Close';
+  closeButton.classList.add('closeButton');
+
   // Attach items to the div
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
@@ -144,6 +149,7 @@ const articleCreator = (title, date, p1, p2, p3) => {
   article.appendChild(para2);
   article.appendChild(para3);
   article.appendChild(expandButton);
+  article.appendChild(closeButton);
 
   // return article
   return article;
