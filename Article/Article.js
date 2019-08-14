@@ -129,24 +129,21 @@ const articleCreator = (title, date, p1, p2, p3) => {
   article.classList.add('article');
 
   // h2 for the title
-  const articleTitle = document.createElement('h2');
-  articleTitle.textContent = title;
+  const articleTitle = itemCreator('h2', title, 'title');
 
   // Date of article
-  const articleDate = document.createElement('p');
-  articleDate.classList.add('date');
-  articleDate.textContent = date;
+  const articleDate = itemCreator('p', date, 'date');
 
   // P tags
-  const para1 = pCreator(p1);
-  const para2 = pCreator(p2);
-  const para3 = pCreator(p3);
+  const para1 = itemCreator('p', p1, 'p1');
+  const para2 = itemCreator('p', p2, 'p2');
+  const para3 = itemCreator('p', p3, 'p3');
 
   // expandButton span
-  const expandButton = buttonCreator('span', 'Expand', 'expandButton');
+  const expandButton = itemCreator('span', 'Expand', 'expandButton');
 
   // Close button
-  const closeButton = buttonCreator('span', 'Close', 'closeButton');
+  const closeButton = itemCreator('span', 'Close', 'closeButton');
 
   // Event listener for the expand button
   expandButton.addEventListener('click', () => {
@@ -175,18 +172,11 @@ const articleCreator = (title, date, p1, p2, p3) => {
 };
 
 // Button creator to practice nesting
-function buttonCreator(type, content, name) {
-  let button = document.createElement(type);
-  button.textContent = content;
-  button.classList.add(name);
-  return button;
-}
-
-// p creator
-function pCreator(stuff) {
-  p = document.createElement('p');
-  p.textContent = stuff;
-  return p;
+function itemCreator(type, content, name) {
+  let item = document.createElement(type);
+  item.textContent = content;
+  item.classList.add(name);
+  return item;
 }
 
 // map over the data and create components
