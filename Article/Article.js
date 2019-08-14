@@ -142,6 +142,11 @@ const articleCreator = (title, date, p1, p2, p3) => {
   closeButton.textContent = 'Close';
   closeButton.classList.add('closeButton');
 
+  // Event listener for the expand button
+  closeButton.addEventListener('click', () => {
+    article.style.display = 'none';
+  });
+
   // Attach items to the div
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
