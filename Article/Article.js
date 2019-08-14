@@ -129,15 +129,15 @@ const articleCreator = (title, date, p1, p2, p3) => {
   article.classList.add('article');
 
   // h2 for the title
-  const articleTitle = itemCreator('h2', title, 'title');
+  const articleTitle = itemCreator('h2', title);
 
   // Date of article
   const articleDate = itemCreator('p', date, 'date');
 
   // P tags
-  const para1 = itemCreator('p', p1, 'p1');
-  const para2 = itemCreator('p', p2, 'p2');
-  const para3 = itemCreator('p', p3, 'p3');
+  const para1 = itemCreator('p', p1);
+  const para2 = itemCreator('p', p2);
+  const para3 = itemCreator('p', p3);
 
   // expandButton span
   const expandButton = itemCreator('span', 'Expand', 'expandButton');
@@ -159,13 +159,11 @@ const articleCreator = (title, date, p1, p2, p3) => {
   });
 
   // Attach items to the div
-  article.appendChild(articleTitle);
-  article.appendChild(articleDate);
-  article.appendChild(para1);
-  article.appendChild(para2);
-  article.appendChild(para3);
-  article.appendChild(expandButton);
-  article.appendChild(closeButton);
+  const items = [ articleTitle, articleDate, para1, para2, para3, expandButton, closeButton ];
+
+  items.forEach((item) => {
+    article.appendChild(item);
+  });
 
   // return article
   return article;
