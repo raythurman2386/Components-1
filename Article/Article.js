@@ -159,9 +159,7 @@ const articleCreator = (title, date, p1, p2, p3) => {
   });
 
   // Attach items to the div
-  const items = [ articleTitle, articleDate, para1, para2, para3, expandButton, closeButton ];
-
-  items.forEach((item) => {
+  const items = [ articleTitle, articleDate, para1, para2, para3, expandButton, closeButton ].forEach((item) => {
     article.appendChild(item);
   });
 
@@ -169,7 +167,7 @@ const articleCreator = (title, date, p1, p2, p3) => {
   return article;
 };
 
-// Button creator to practice nesting
+// Item creator to make code DRY
 function itemCreator(type, content, name) {
   let item = document.createElement(type);
   item.textContent = content;
