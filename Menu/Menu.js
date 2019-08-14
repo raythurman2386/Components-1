@@ -49,14 +49,10 @@ const menuCreator = (arr) => {
     mainUl.appendChild(newItem);
   });
 
-  console.log(mainUl);
-
   // add the event listener for the menu button
   menuButton.addEventListener('click', (e) => {
     e.stopPropagation();
     menu.classList.toggle('menu--open');
-
-    // console.log('clicked');
   });
 
   // Return menu
