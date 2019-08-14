@@ -102,6 +102,21 @@ const data = [
 
 */
 
+// Button creator to practice nesting
+function buttonCreator(type, content, name) {
+  let button = document.createElement(type);
+  button.textContent = content;
+  button.classList.add(name);
+  return button;
+}
+
+// p creator
+function pCreator(stuff) {
+  p = document.createElement('p');
+  p.textContent = stuff;
+  return p;
+}
+
 const articleCreator = (title, date, p1, p2, p3) => {
   // Main div with the class article
   const article = document.createElement('div');
@@ -117,19 +132,20 @@ const articleCreator = (title, date, p1, p2, p3) => {
   articleDate.textContent = date;
 
   // P tags
-  const para1 = document.createElement('p');
-  para1.textContent = p1;
+  const para1 = pCreator(p1);
+  // document.createElement('p');
+  // para1.textContent = p1;
 
-  const para2 = document.createElement('p');
-  para2.textContent = p2;
+  const para2 = pCreator(p2);
+  // document.createElement('p');
+  // para2.textContent = p2;
 
-  const para3 = document.createElement('p');
-  para3.textContent = p3;
+  const para3 = pCreator(p3);
+  // document.createElement('p');
+  // para3.textContent = p3;
 
   // expandButton span
-  const expandButton = document.createElement('span');
-  expandButton.textContent = 'Expand';
-  expandButton.classList.add('expandButton');
+  const expandButton = buttonCreator('span', 'Expand', 'expandButton');
 
   // Event listener for the expand button
   expandButton.addEventListener('click', () => {
@@ -138,9 +154,10 @@ const articleCreator = (title, date, p1, p2, p3) => {
   });
 
   // Close button
-  const closeButton = document.createElement('span');
-  closeButton.textContent = 'Close';
-  closeButton.classList.add('closeButton');
+  const closeButton = buttonCreator('span', 'Close', 'closeButton');
+  // document.createElement('span');
+  // closeButton.textContent = 'Close';
+  // closeButton.classList.add('closeButton');
 
   // Event listener for the expand button
   closeButton.addEventListener('click', () => {
