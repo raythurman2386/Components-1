@@ -152,6 +152,8 @@ const articleCreator = (title, date, p1, p2, p3) => {
   expandButton.addEventListener('click', () => {
     article.style.transition = '0.7s';
     article.classList.toggle('article-open');
+    expandButton.style.display = 'none';
+    closeButton.style.display = 'block';
   });
 
   // Event listener for the close button
