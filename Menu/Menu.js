@@ -27,10 +27,6 @@ let menuItems = [ 'Students', 'Faculty', "What's New", 'Tech Trends', 'Music', '
   
 */
 
-// Variables
-// grab the menu button
-const menuButton = document.querySelector('.menu-button');
-
 const menuCreator = (arr) => {
   // Create the menu div and assign it's class
   const menu = document.createElement('div');
@@ -49,7 +45,8 @@ const menuCreator = (arr) => {
   });
 
   // add the event listener for the menu button
-  menuButton.addEventListener('click', (e) => {
+  // grab the menu button
+  const menuButton = document.querySelector('.menu-button').addEventListener('click', (e) => {
     e.stopPropagation();
     menu.classList.toggle('menu--open');
   });
