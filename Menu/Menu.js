@@ -30,7 +30,6 @@ let menuItems = [ 'Students', 'Faculty', "What's New", 'Tech Trends', 'Music', '
 // Variables
 // grab the menu button
 const menuButton = document.querySelector('.menu-button');
-const header = document.querySelector('.header');
 
 const menuCreator = (arr) => {
   // Create the menu div and assign it's class
@@ -60,4 +59,4 @@ const menuCreator = (arr) => {
 };
 
 // Attach the menu to the header
-header.appendChild(menuCreator(menuItems));
+const header = document.querySelector('.header').appendChild(menuCreator(menuItems));
