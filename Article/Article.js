@@ -100,87 +100,6 @@ const data = [
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
 
-*/
-
-// Button creator to practice nesting
-function buttonCreator(type, content, name) {
-  let button = document.createElement(type);
-  button.textContent = content;
-  button.classList.add(name);
-  return button;
-}
-
-// p creator
-function pCreator(stuff) {
-  p = document.createElement('p');
-  p.textContent = stuff;
-  return p;
-}
-
-const articleCreator = (title, date, p1, p2, p3) => {
-  // Main div with the class article
-  const article = document.createElement('div');
-  article.classList.add('article');
-
-  // h2 for the title
-  const articleTitle = document.createElement('h2');
-  articleTitle.textContent = title;
-
-  // Date of article
-  const articleDate = document.createElement('p');
-  articleDate.classList.add('date');
-  articleDate.textContent = date;
-
-  // P tags
-  const para1 = pCreator(p1);
-
-  const para2 = pCreator(p2);
-
-  const para3 = pCreator(p3);
-
-  // expandButton span
-  const expandButton = buttonCreator('span', 'Expand', 'expandButton');
-
-  // Event listener for the expand button
-  expandButton.addEventListener('click', () => {
-    article.style.transition = '0.7s';
-    article.classList.toggle('article-open');
-  });
-
-  // Close button
-  const closeButton = buttonCreator('span', 'Close', 'closeButton');
-
-  // Event listener for the expand button
-  closeButton.addEventListener('click', () => {
-    article.style.display = 'none';
-  });
-
-  // Attach items to the div
-  article.appendChild(articleTitle);
-  article.appendChild(articleDate);
-  article.appendChild(para1);
-  article.appendChild(para2);
-  article.appendChild(para3);
-  article.appendChild(expandButton);
-  article.appendChild(closeButton);
-
-  // return article
-  return article;
-};
-
-// map over the data and create components
-const articleComponents = data.map((i) => {
-  return articleCreator(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph);
-});
-
-console.log(articleComponents);
-
-const articleContainer = document.querySelector('.articles');
-articleComponents.forEach((article) => {
-  articleContainer.appendChild(article);
-});
-
-/*
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -203,3 +122,78 @@ articleComponents.forEach((article) => {
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articleCreator = (title, date, p1, p2, p3) => {
+  // Main div with the class article
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+  // h2 for the title
+  const articleTitle = document.createElement('h2');
+  articleTitle.textContent = title;
+
+  // Date of article
+  const articleDate = document.createElement('p');
+  articleDate.classList.add('date');
+  articleDate.textContent = date;
+
+  // P tags
+  const para1 = pCreator(p1);
+  const para2 = pCreator(p2);
+  const para3 = pCreator(p3);
+
+  // expandButton span
+  const expandButton = buttonCreator('span', 'Expand', 'expandButton');
+
+  // Close button
+  const closeButton = buttonCreator('span', 'Close', 'closeButton');
+
+  // Event listener for the expand button
+  expandButton.addEventListener('click', () => {
+    article.style.transition = '0.7s';
+    article.classList.toggle('article-open');
+  });
+
+  // Event listener for the close button
+  closeButton.addEventListener('click', () => {
+    article.style.display = 'none';
+  });
+
+  // Attach items to the div
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(expandButton);
+  article.appendChild(closeButton);
+
+  // return article
+  return article;
+};
+
+// Button creator to practice nesting
+function buttonCreator(type, content, name) {
+  let button = document.createElement(type);
+  button.textContent = content;
+  button.classList.add(name);
+  return button;
+}
+
+// p creator
+function pCreator(stuff) {
+  p = document.createElement('p');
+  p.textContent = stuff;
+  return p;
+}
+
+// map over the data and create components
+const articleComponents = data.map((i) => {
+  return articleCreator(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph);
+});
+
+// Add the components to the DOM
+const articleContainer = document.querySelector('.articles');
+articleComponents.forEach((article) => {
+  articleContainer.appendChild(article);
+});
