@@ -177,13 +177,13 @@ function itemCreator(type, content, name) {
   return item;
 }
 
-// map over the data and create components
-const articleComponents = data.map((i) => {
-  return articleCreator(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph);
-});
-
 // Add the components to the DOM
 const articleContainer = document.querySelector('.articles');
-articleComponents.forEach((article) => {
-  articleContainer.appendChild(article);
-});
+// map over the data and create components
+const articleComponents = data
+  .map((i) => {
+    return articleCreator(i.title, i.date, i.firstParagraph, i.secondParagraph, i.thirdParagraph);
+  })
+  .forEach((article) => {
+    articleContainer.appendChild(article);
+  });
